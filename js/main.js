@@ -48,7 +48,7 @@ function maxOfThree(num1, num2, num3) {
 
 //1.7 hell no
 
-//1.8 idk how to get rgb
+//1.8 idk rgb
 
 //=================================
 
@@ -77,7 +77,7 @@ function reverse(str) {
 
 //2.4 no
 
-//2.5 gugl
+//2.5 
 function findLongestWord() {
     let niz = ["dan", "noc", "macke"];
     let max = 0;
@@ -168,8 +168,83 @@ function randomSum() {
     console.log(sumAgain);
 }
 
-//nah
+//Multiplication table
+let p1 = 1;
+let p2 = 10;
 
+function multiple() {
+    let res = "\n";
+
+    for(let i = p1; i <= p2; i++)  {
+        for(let y = p1; y <= p2; y++) {
+            res += (i*y) + "\t";
+        }
+        res += "\n";
+    }
+    console.log(res);
+
+}
+
+//Hex to rgb
+function getRgb(value) {
+    let valueSplit = value.split("");
+    
+    for(let i = 0; i < valueSplit.length; i++) {
+        switch(valueSplit[i]) {
+            case("A"):
+                valueSplit[i] = 10; 
+                break;
+            case("B"):
+                valueSplit[i] = 11;
+                break;
+            case("C"):
+                valueSplit[i] = 12;
+                break;
+            case("D"):
+                valueSplit[i] = 13;
+                break;
+            case("E"):
+                valueSplit[i] = 14;
+                break;
+            case("F"):
+                valueSplit[i] = 15;
+        }
+
+        valueSplit[i] = parseInt(valueSplit[i]);
+    } 
+
+    let r = valueSplit[1] * 16 + valueSplit[2];
+    let g = valueSplit[3] * 16 + valueSplit[4];
+    let b = valueSplit[5] * 16 + valueSplit[6];
+
+    console.log(`rgb(${r},${g},${b})`);
+}
+
+let a = getRgb('#50068F');
+
+
+//filterWords
+
+let words = "Just some random words";
+let num = 4;
+
+function filterLongWords() {
+    let result = [];
+    words = words.split(" ");
+
+    for(let i = 0; i < words.length; i++) {
+        if(words[i].length > num) {
+
+            result.push(words[i]);   
+        }
+    }
+
+    let result2 = words.filter(word => word.length > num);
+    console.log(result2);
+
+    return result;
+
+}
 
 
 
