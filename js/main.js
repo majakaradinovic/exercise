@@ -246,5 +246,166 @@ function filterLongWords() {
 
 }
 
+//6
+
+function encodeWord(str) {
+    str = str.replace("T", "7").replace("A", "4").replace("S", "5").replace("O", "0");
+    console.log(str);
+}
+
+encodeWord("TASO TASO TASO"); //this does't work properly
+
+//7
+
+
+function fibonacci(n) {
+    return n == 0 ? 0
+    : n == 1 ? 1
+    : fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+
+function add() {
+    let args = Array.from(arguments);
+    let sum = 0;
+
+    args.forEach(function (num, index) {
+            sum += num;
+      });
+      
+    console.log(sum);
+}
+
+
+function reverse(num) {
+    str = String(num);
+
+    return str.split("").reverse().join("");
+}
+
+
+function palindrome(str) {
+    str = str.toLowerCase().replace(/[\W_]/g, "");
+    let rev = str.split("").reverse().join("");
+
+    return rev == str ? console.log("Yup, it's palindrome") : console.log("Hell no");
+}
+
+//Write a JavaScript function that generates all combinations of a string ?? 
+
+function alphaOrder(str) {
+    return str.split('').sort().join('');
+}
+
+
+
+function upperFirstLetter(str) {
+    str = str.split(" ");
+
+    for(let word in str) {
+
+        str[word] = str[word].split("");
+        str[word][0] = str[word][0].toUpperCase();
+        str[word] = str[word].join("");
+
+    }
+
+    console.log(str.join(' '));
+    
+}
+
+
+function numOfVowels(str) {
+    srt = str.split("");
+    let letNum = "";
+
+    for(let letter in str) {
+        if(str[letter] == "a" || str[letter] == "e" || str[letter] == "i" || str[letter] == "o" || str[letter] == "u") {
+            letNum += str[letter];
+        }
+    }
+
+    return letNum.length;
+}
+
+
+//typeof() ?
+
+
+function getExponent(b,n) {
+    result = 1;
+    
+    for(let i = 1; i <= n; i++) {
+        result = b * result;
+    }
+
+    console.log(result);
+}
+
+getExponent(2,2);
+
+
+function uniqueChar(str) {
+    let unique = "";
+
+    for(let i = 0; i < str.length; i++) {
+        if(unique.indexOf(str.charAt(i))==-1) {
+            unique += str[i];
+        }   
+    }
+    console.log(unique);
+}
+
+
+function occurence(str) {
+    str = str.split("").sort().join("");
+    let num = 1;
+
+    for(let i = 0; i < str.length; i++) {
+        if(str[i] == str[i + 1]) {
+            num ++;
+        }
+        else {
+            console.log(str[i],num);
+            num = 1;
+        }
+    }
+}
+
+occurence("dabb");
+
+
+function getStringId(num) {
+    var res = "";
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < num; i++) {
+        res += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    
+    return res;
+ }
+ 
+ console.log(getStringId(3));
+
+
+
+ function letterOccurence(str, letter) {
+    let count = 0;
+
+    for(let i = 0; i < str.length; i++) {
+        if (str.charAt(i) == letter) {
+            count += 1;
+        } 
+     }
+
+    console.log(count);
+ }
+
+ letterOccurence("daadssa", "a");
+
+
+
+
 
 
